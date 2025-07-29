@@ -1,7 +1,8 @@
 import Header from "./Header";
 import Footer from "./Footer"
 
-const Layout = ({ children }) => {
+const Layout = ({ children,hideLayout }) => {
+  if (hideLayout) return <>{children}</>;
   return (
     <>
       <Header />

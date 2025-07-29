@@ -12,10 +12,32 @@
   }
 }
 
+/* global.css or Tailwind config */
+
+
+
 .animate-slide {
   animation: slide 25s linear infinite;
 }
 .surgery-card:hover {
   transform: scale(1.02);
   transition: all 0.3s ease;
+}
+/* globals.css or inside reviews.module.css */
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
+/* Optional: Add this in globals.css */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #e0e0e0;
+  border-radius: 6px;
 }

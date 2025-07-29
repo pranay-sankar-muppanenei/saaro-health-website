@@ -1,14 +1,7 @@
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
 
-const SurgeryBenefits = () => {
-  const benefits = [
-    '95%+ Permanent Relief Rate',
-    'Quick Recovery',
-    'Pain-Free & Stitch-Free',
-    'Covered by Major Insurance Providers',
-  ];
-
+const SurgeryBenefits = ({ benefits = [] }) => {
   return (
     <section className="flex flex-col lg:flex-row items-start justify-between gap-10 px-4 lg:px-20 py-12 bg-white">
       {/* Left Text Content */}
@@ -17,7 +10,7 @@ const SurgeryBenefits = () => {
           A Small Step Towards a<br />Healthier, Pain-Free Life
         </h2>
         <p className="text-gray-600 text-sm sm:text-base">
-          Living with piles can silently affect your daily life — from pain and discomfort to embarrassing moments. Modern surgical treatments offer quick relief, high success rates, and a permanent solution.
+          Modern surgical treatments offer quick relief, high success rates, and a permanent solution.
         </p>
       </div>
 

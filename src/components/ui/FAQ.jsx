@@ -3,43 +3,14 @@
 import { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
 
-const defaultFaqs = [
-  {
-    question: 'Which Doctor is Best for Piles Surgery?',
-    answer:
-      'A proctologist or a general surgeon is considered to be the best doctor for piles surgery. A proctologist specializes in diagnosing and treating colorectal diseases including those related to the colon, rectum, and anus.',
-  },
-  {
-    question: 'Is piles surgery painful?',
-    answer:
-      'Modern piles surgeries like laser treatment are minimally invasive and typically pain-free, with faster recovery times compared to traditional surgery.',
-  },
-  {
-    question: 'What is the recovery time for piles surgery?',
-    answer:
-      'Most patients recover within 3 to 5 days after undergoing laser surgery for piles. Recovery time can vary depending on the type of procedure.',
-  },
-  {
-    question: 'Does piles surgery require hospitalization?',
-    answer:
-      'Minimally invasive piles surgeries usually do not require hospitalization. Patients are often discharged the same day.',
-  },
-  {
-    question: 'Is piles surgery covered under insurance?',
-    answer:
-      'Yes, many modern piles surgeries are covered by major health insurance providers. It’s best to verify with your insurer beforehand.',
-  },
-];
-
-const FAQSection = ({
-  title = 'FAQs Around Piles Treatment',
-  faqs = defaultFaqs,
-}) => {
+const FAQSection = ({ title, faqs }) => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggle = (index) => {
     setOpenIndex((prev) => (prev === index ? null : index));
   };
+
+  if (!faqs || faqs.length === 0) return null;
 
   return (
     <section className="bg-white px-4 py-12 md:px-20">
@@ -49,7 +20,7 @@ const FAQSection = ({
 
       <div className="space-y-4 flex flex-col items-center">
         {faqs.map((item, idx) => (
-          <div key={idx} className="border w-[800px] border-purple-300 rounded-xl p-4">
+          <div key={idx} className="border w-full md:w-[800px] border-purple-300 rounded-xl p-4">
             <div
               className="flex justify-between items-center cursor-pointer"
               onClick={() => toggle(idx)}

@@ -1,13 +1,15 @@
 import React from "react";
+import Link from 'next/link';
 
 const surgeries = [
-  { title: "Piles Surgery", icon: "/piles.png" },
-  { title: "Circumcision", icon: "/peni.png" },
-  { title: "Hernia Surgery", icon: "/hernia.png" },
-  { title: "Hernia Surgery", icon: "/hernia.png" },
-  { title: "Hernia Surgery", icon: "/hernia.png" },
-  { title: "Hernia Surgery", icon: "/hernia.png" },
+  { title: "Piles Surgery", slug: "piles-surgery", icon: "/piles.png" },
+  { title: "Circumcision", slug: "circumcision", icon: "/peni.png" },
+  { title: "Hernia Surgery", slug: "hernia-surgery", icon: "/hernia.png" },
+  { title: "Gallstone Surgery", slug: "gallstone-surgery", icon: "/hernia.png" },
+  { title: "Varicose Veins Surgery", slug: "varicose-veins", icon: "/peni.png" },
+  { title: "Appendix Surgery", slug: "appendix-surgery", icon: "/piles.png" },
 ];
+
 
 const TopSurgeries = () => {
   return (
@@ -16,6 +18,8 @@ const TopSurgeries = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 max-w-6xl mx-auto">
         {surgeries.map((item, index) => (
+          <Link href={`/surgery/${item.slug}`} key={index}>
+
           <div
             key={index}
             className="bg-white shadow-sm rounded-xl border border-gray-200 px-6 py-6 flex flex-col items-center justify-between transition hover:shadow-md"
@@ -34,6 +38,7 @@ const TopSurgeries = () => {
               View Doctors
             </button>
           </div>
+          </Link>
         ))}
       </div>
 

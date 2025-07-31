@@ -11,9 +11,9 @@ const TestimonialsSection = () => {
 
   return (
     <section className="px-4 py-16 bg-white text-center">
-      <h2 className="text-[40px] font-dm mb-2">Patients love Saaro, because</h2>
+      <h2 className="text-[30px] md:text-[40px]  font-dm mb-2">Patients love Saaro, because</h2>
 
-      <p className="text-[#8F6CB4] text-[40px] font-dm italic mb-10">Saaro understands</p>
+      <p className="text-[#8F6CB4] text-[33px] md:text-[40px]  font-dm italic mb-10">Saaro understands</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {testimonials.map((t, i) => (

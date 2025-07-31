@@ -23,7 +23,7 @@ const StepsSection = () => {
   return (
     <section className="text-center flex flex-col items-center w-full px-4 py-16 bg-white">
       {/* Title */}
-      <h2 className="text-[40px] font-dm font-medium text-gray-800 mb-16">
+      <h2 className="text-[30px] md:text-[40px] font-dm font-medium text-gray-800 mb-16">
         Quick. Clear. Hassle-free.
       </h2>
 

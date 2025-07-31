@@ -14,13 +14,13 @@ const FAQSection = ({ title, faqs }) => {
 
   return (
     <section className="bg-white px-4 py-12 md:px-20">
-      <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-6 text-center">
+      <h2 className="text-xl md:text-3xl font-semibold text-gray-900 mb-6 text-center">
         {title}
       </h2>
 
       <div className="space-y-4 flex flex-col items-center">
         {faqs.map((item, idx) => (
-          <div key={idx} className="border w-full md:w-[800px] border-purple-300 rounded-xl p-4">
+          <div key={idx} className="border w-full md:w-[700px] border-purple-300 rounded-xl p-4">
             <div
               className="flex justify-between items-center cursor-pointer"
               onClick={() => toggle(idx)}

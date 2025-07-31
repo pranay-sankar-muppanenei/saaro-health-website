@@ -32,12 +32,12 @@ const DoctorCategories = () => {
 
   return (
     <section className="py-10 bg-white text-center">
-      <h2 className="text-[40px] font-dm text-400">
+      <h2 className="text-[26px] md:text-[40px] font-dm text-400">
   Consult top doctors for <br />
-  <span className="text-[40px] font-dm" >
+  <span className="text-[26px] md:text-[40px] font-dm" >
     any
   </span>{" "}
-  <span className="text-[#8F6CB4] font-dm italic">
+  <span className="text-[30px] md:text-[40px]  text-[#8F6CB4] font-dm italic">
     health concern
   </span>
 </h2>

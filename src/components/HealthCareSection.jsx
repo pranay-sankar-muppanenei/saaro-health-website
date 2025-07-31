@@ -5,7 +5,7 @@ import { FaApple, FaGooglePlay } from "react-icons/fa";
 
 const HealthcareSection = () => {
   return (
-    <section className="bg-[#f8f6fc] py-12 px-6 overflow-visible relative">
+    <section className="bg-[#f8f6fc] py-12 px-10 overflow-visible relative">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center text-center md:text-left gap-10 relative z-10">
         {/* Left Side Text */}
         <div className="md:w-1/2 z-10">

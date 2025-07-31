@@ -27,6 +27,7 @@ export default function Home() {
   const handleCloseModal = () => setIsModalOpen(false);
   return (
     <>
+    
      {isModalOpen && <AppointmentModal onClose={handleCloseModal} />}
     <HeroSection onBookClick={handleOpenModal} />
     <AppointmentSection/>
@@ -36,7 +37,7 @@ export default function Home() {
        <HospitalPartners/>
     <TestimonialsSection/>
     <HealthcareSection/>
- 
+
     </>
   );
 }

@@ -25,7 +25,7 @@ export default function SurgeryPage({ surgery }) {
         <div className="flex flex-col items-center lg:flex-row justify-between gap-12">
           {/* Left Text Content */}
           <div className="flex-1">
-            <h1 className="text-3xl font-semibold mb-4">{surgery.title}</h1>
+            <h1 className="text-xl md:text-3xl font-semibold mb-4">{surgery.title}</h1>
             <p className="text-gray-600 mb-6 max-w-lg">{surgery.description}</p>
             <a
               href={`tel:${surgery.phone}`}
@@ -41,17 +41,20 @@ export default function SurgeryPage({ surgery }) {
       </section>
 
       {/* Benefit Cards Section */}
-      <section className="bg-white py-10 px-4 md:px-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-        {surgery.benefits.map((card, index) => (
-          <div
-            key={index}
-            className={`flex items-center mr-1 justify-center h-[60px] w-[230px] rounded-md text-white font-semibold text-sm ${card.color}`}
-          >
-            <img src={card.img} alt={card.text} className="h-6 mr-3" />
-            {card.text}
-          </div>
-        ))}
-      </section>
+     <section className="bg-white py-10 px-4 md:px-20">
+  <div className="flex flex-wrap justify-center gap-2">
+    {surgery.benefits.map((card, index) => (
+      <div
+        key={index}
+        className={`flex items-center justify-center h-[60px] w-full sm:w-[48%] md:w-[45%] lg:w-[220px] xl:w-[230px] rounded-md text-white font-semibold text-sm px-4 ${card.color}`}
+      >
+        <img src={card.img} alt={card.text} className="h-6 mr-3 items-start" />
+        {card.text}
+      </div>
+    ))}
+  </div>
+    </section>
+
 
      <DoctorsSection surgeryKey={surgery.key} surgeryName={surgery.title} />
 

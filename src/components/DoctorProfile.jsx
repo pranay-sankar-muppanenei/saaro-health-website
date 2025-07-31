@@ -3,7 +3,6 @@ import DoctorHeaderCard from "../components/doctor/DoctorHeaderCard";
 import ConsultationForm from "../components/doctor/ConsultationForm";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// You can set default doctor data if none is passed (optional)
 const fallbackDoctor = {
   name: "Dr. Ankit Sharma",
   experience: "12 Years Experience",
@@ -83,8 +82,8 @@ const DoctorProfile = ({ doctor = fallbackDoctor }) => {
 
   return (
     <div className="max-w-7xl mx-auto flex-col">
-      <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col lg:flex-row gap-6">
-        <div className="flex-1 space-y-6">
+      <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col  lg:flex-row  gap-6">
+        <div className="flex-1  space-y-6 ">
           <DoctorHeaderCard doctor={doctor} />
 
           {/* Awards */}
@@ -103,7 +102,7 @@ const DoctorProfile = ({ doctor = fallbackDoctor }) => {
           </div>
 
           {/* Tabs */}
-          <div className="flex gap-4 mt-4">
+          <div className="flex gap-4 mt-4 flex-wrap">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
@@ -120,7 +119,8 @@ const DoctorProfile = ({ doctor = fallbackDoctor }) => {
           </div>
 
           {/* Tab content */}
-          <div className="bg-white rounded-xl p-0 mt-4 space-y-4">
+       
+          <div className="bg-white rounded-xl p-4 mt-4 space-y-4 w-full md:w-[650px] xl:w-[800px] md:flex-1">
             {activeTab === "about" && (
               <>
                 <h2 className="text-[20px] font-semibold">About Doctor</h2>
@@ -133,7 +133,7 @@ const DoctorProfile = ({ doctor = fallbackDoctor }) => {
             {activeTab === "reviews" && (
               <>
                 <h2 className="text-[20px] font-semibold mb-2">Reviews</h2>
-                <div className="relative max-w-[800px] no-scrollbar">
+                <div className="relative w-full no-scrollbar">
                   <div
                     ref={scrollRef}
                     className="flex gap-3 overflow-x-auto no-scrollbar scroll-smooth px-1"
@@ -180,39 +180,41 @@ const DoctorProfile = ({ doctor = fallbackDoctor }) => {
               </>
             )}
           </div>
-
           {/* Clinic Location */}
-          <div className="rounded-3xl w-[600px] mt-4 bg-white">
+          <div className="rounded-3xl w-full md:w-[600px] mt-4 bg-white">
             <h3 className="text-[20px] font-semibold mb-2">Clinic Location</h3>
             <span className="inline-block bg-[#8F6CB4] mt-3 w-[119px] text-white h-[31px] text-xs px-3 py-2 text-center rounded-full mb-3">
               {doctor.city}
             </span>
-            <div className="border flex  p-4 rounded-md">
-              <div className="w-[106px] h-[96px] bg-[#D9D9D9] rounded-[10px]"></div>
-              <div className="ml-4">
+            <div className="border flex flex-col sm:flex-row gap-4 p-4 rounded-md">
+              <div className="w-full sm:w-[106px] h-[96px] bg-[#D9D9D9] rounded-[10px]"></div>
+              <div className="flex flex-1 justify-between">
+                 <img src="location.png" className="h-[25px] w-[20px] mt-2 mr-2 md:hidden" />
+                <div>
                 <p className="font-medium text-sm mt-1">Address</p>
-                <p className="text-sm mt-3 w-[60%]">{doctor.clinicAddress}</p>
+                <p className="text-sm mt-3">{doctor.clinicAddress}</p>
+                </div>
               </div>
-              <img src="location.png" className="h-[25px] w-[20px]" />
+              <img src="location.png" className="h-[25px] w-[20px] hidden md:flex" />
             </div>
           </div>
         </div>
 
         {/* Form */}
-        <div className="w-full lg:w-[400px]">
+        <div className="w-full max-w-md mx-auto lg:w-[400px]">
           <ConsultationForm doctorName={doctor.name} />
         </div>
       </div>
 
       {/* Treatments */}
-      <div className="mt-10 mb-7">
+      <div className="mt-10 mb-7 px-4">
         <h2 className="text-[40px] font-semibold text-center">Top Treatments</h2>
         <p className="text-[#8F6CB4] text-md text-center">by {doctor.name}</p>
-        <div className="flex space-x-10 justify-center ml-11 mr-11 mt-6">
+        <div className="flex flex-wrap justify-center gap-6 mt-6">
           {doctor.topTreatments.map((treatment, index) => (
             <div
               key={index}
-              className="w-[270px] h-[240px] bg-[#EDEDED] rounded-tr-full rounded-tl-full rounded-br-full flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-[#8F6CB4] group cursor-pointer"
+              className="w-[90%] sm:w-[250px] h-[240px] bg-[#EDEDED] rounded-tr-full rounded-tl-full rounded-br-full flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-[#8F6CB4] group cursor-pointer"
             >
               <img
                 src={treatment.icon}
@@ -238,13 +240,16 @@ const DoctorProfile = ({ doctor = fallbackDoctor }) => {
       </div>
 
       {/* Action Cards */}
-      <div className="-mb-10 mt-40 flex justify-center gap-6 z-10">
+      <div className="-mb-10 mt-40 flex flex-col sm:flex-row items-center justify-center gap-6 z-10 px-4">
         {["Contact Doctor", "Book Appointment", "Visit"].map((action, i) => (
           <div
             key={i}
-            className="w-[328px] h-[200px] bg-white border rounded-[18px] flex flex-col justify-center items-center shadow-md"
+            className="w-full max-w-[328px] h-[200px] bg-white border rounded-[18px] flex flex-col justify-center items-center shadow-md"
           >
-            <img src={`/${action.toLowerCase().replace(" ", "")}.png`} className="w-[82px] h-[82px]" />
+            <img
+              src={`/${action.toLowerCase().replace(" ", "")}.png`}
+              className="w-[82px] h-[82px]"
+            />
             <button className="text-sm w-[192px] h-[40px] text-[#8F6CB4] border border-[#8F6CB4] rounded-[23px] mt-3">
               {action}
             </button>

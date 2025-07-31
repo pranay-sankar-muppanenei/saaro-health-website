@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const HeroSection = ({ onBookClick }) => {
 
   return (
-    <section className="relative h-screen w-[90vw] border border-[#E5E5E5] border-2 mb-4 rounded-md mx-auto my-2 overflow-hidden bg-white">
+    <section className="relative p-3 max-h-screen md:h-screen w-[90vw] border border-[#E5E5E5] border-2 mb-4 rounded-md mx-auto my-2 overflow-hidden bg-white">
       {/* Centered Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
         {/* Logo */}
@@ -29,6 +29,7 @@ const HeroSection = ({ onBookClick }) => {
       </div>
 
       {/* Floating Card 1 - With avatars */}
+      <div className="hidden md:flex">
   <motion.div
   className="absolute top-[10%] left-[5%] w-[230px] h-[220px] rounded-xl shadow-lg overflow-hidden"
   initial={{ y: -30, opacity: 0 }}
@@ -80,6 +81,7 @@ const HeroSection = ({ onBookClick }) => {
 
 
       {/* Floating Card 2 - Just an image */}
+      
       <motion.div
         className="absolute bottom-[10%] left-[10%] w-[220px] rounded-xl shadow-lg overflow-hidden"
         initial={{ y: 30, opacity: 0 }}
@@ -128,6 +130,7 @@ const HeroSection = ({ onBookClick }) => {
         />
         
       </motion.div>
+      </div>
     </section>
   );
 };

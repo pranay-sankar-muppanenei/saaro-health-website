@@ -37,11 +37,11 @@ const DoctorsSection = ({
 
   return (
     <div className="bg-white py-10 px-4 md:px-20">
-      <div className="flex flex-col lg:flex-row gap-10">
+      <div className="flex flex-col xl:flex-row gap-10">
         
         {/* Left Side */}
         <div className="flex-1">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+          <h2 className="text-xl md:text-2xl font-semibold text-gray-900 mb-4">
             Best Doctors For {surgeryName} Treatment
           </h2>
 
@@ -98,7 +98,7 @@ const DoctorsSection = ({
                     <div className="flex-1 space-y-2">
                       <div className="flex justify-between items-start">
                         <h3 className="text-[14px] font-dm font-semibold text-gray-900">{doctor.name}</h3>
-                        <span className="bg-[#E4D4F6] text-[#791BC7] font-bold text-[10px] px-1 py-1 rounded-full">
+                        <span className="bg-[#E4D4F6] text-center text-[#791BC7] font-bold text-[10px] px-1 py-1 rounded-full">
                           {doctor.qualification}
                         </span>
                       </div>
@@ -150,7 +150,7 @@ const DoctorsSection = ({
                           </button>
                         ))}
                       </div>
-                      <button className="mt-2 w-[200px] self-end bg-[#8F6CB4] text-white text-sm py-2 rounded-full hover:scale-102 transition">
+                      <button className="mt-2 w-[200px] self-center lg:self-end bg-[#8F6CB4] text-white text-sm py-2 rounded-full hover:scale-102 transition">
                         Book a free appointment
                       </button>
                     </div>
@@ -162,7 +162,7 @@ const DoctorsSection = ({
         </div>
 
         {/* Right Side Form */}
-        <div className="w-full lg:w-[360px]">
+        <div className="w-full flex justify-center lg:w-[400px]">
           <AppointmentForm topCities={cities} />
         </div>
       </div>

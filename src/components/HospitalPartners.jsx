@@ -17,7 +17,7 @@ const HospitalPartners = () => {
     <section className="w-full py-16 px-4 bg-white">
       <div className="w-full mx-auto relative text-center  rounded-3xl p-10  overflow-hidden">
         {/* Heading and Text */}
-        <h2 className="text-[40px] font-dm  mb-4 text-gray-900 relative z-10">
+        <h2 className="text-[35px] md:text-[40px]  font-dm  mb-4 text-gray-900 relative z-10">
           Our Trusted <br className="md:hidden" />
           Hospital Partners
         </h2>

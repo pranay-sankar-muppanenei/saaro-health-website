@@ -14,7 +14,7 @@ const surgeries = [
 const TopSurgeries = () => {
   return (
     <section className="py-12 bg-white text-center">
-      <h2 className="text-[40px] text-500 font-dm  mb-10">Top Surgeries</h2>
+      <h2 className="text-[30px] md:text-[40px] text-500 font-dm  mb-10">Top Surgeries</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 max-w-6xl mx-auto">
         {surgeries.map((item, index) => (

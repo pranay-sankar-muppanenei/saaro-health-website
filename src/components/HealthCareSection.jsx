@@ -9,7 +9,7 @@ const HealthcareSection = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center text-center md:text-left gap-10 relative z-10">
         {/* Left Side Text */}
         <div className="md:w-1/2 z-10">
-          <h2 className="text-[40px] font-dm  text-black mb-2">
+          <h2 className="text-[30px] md:text-[40px] font-dm  text-black mb-2">
             Healthcare that listens
           </h2>
           <p className="text-sm italic text-gray-500 mb-4">Now just a tap away.</p>
@@ -47,7 +47,7 @@ const HealthcareSection = () => {
       alt="Saaro App"
       width={300}
       height={800}
-      className="-translate-y-32 md:-translate-y-38 h-[400px]"
+      className=" md:-translate-y-33 h-[400px]"
     />
     {/* Shadow below the phone */}
     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1 w-36 h-3 bg-black/20 rounded-full blur-sm z-[-1]" />
